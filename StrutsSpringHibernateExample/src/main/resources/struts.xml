@@ -34,6 +34,16 @@
 			<param name="employee.id">{1}</param>
 			<result type="redirect">/list</result>
 		</action>
+		<action name="edit/*" class="editEmployeeAction"
+			method="editEmployee">
+			<param name="employee.id">{1}</param>
+			<result>/edit/editEmployeeForm.jsp</result>
+		</action>
+		<action name="update/*" class="editEmployeeAction"
+			method="updateEmployee">
+			<param name="employee.id">{1}</param>
+			<result type="redirect">/list</result>
+		</action>
 		<action name="*" class="editEmployeeAction"
 			method="listEmployees">
 			<result>/view/editEmployeeList.jsp</result>

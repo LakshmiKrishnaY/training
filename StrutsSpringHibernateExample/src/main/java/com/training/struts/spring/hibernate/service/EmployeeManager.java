@@ -14,4 +14,10 @@ public interface EmployeeManager {
 
 	// Deletes a employee by it's id
 	public void deleteEmployee(Integer employeeId);
+
+	// edits employee details by it's id
+	public Employee editEmployee(Integer employeeId);
+
+	// updates employee details by it's id
+	public void updateEmployee(Employee employee);
 }

@@ -11,12 +11,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-@Entity
-@Table(name = "EMPLOYEE")
+// @Data - getters nd setters auto generated
+@Entity  //creates a table in db
+@Table(name = "EMPLOYEE")  //table name
 public class Employee {
 
-	@Id
+	@Id  //internally generates id in sql used as primary key 
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
@@ -84,4 +84,12 @@ public class Employee {
 	public void setAddressList(List<Address> addressList) {
 		this.addressList = addressList;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
+				+ ", telephone=" + telephone + "]";
+	}
+	
+	
 }

@@ -76,6 +76,21 @@ public class EmployeeManagerImpl implements EmployeeManager {
 		employeeDAO.deleteEmployee(employeeId);
 	}
 
+	// edits employee details by it's id
+	@Override
+	@Transactional
+	public Employee editEmployee(Integer employeeId) {
+		Employee employee = employeeDAO.getEmployee(employeeId);
+		return employee;
+	}
+
+	// updates employee details by it's id
+	@Override
+	@Transactional
+	public void updateEmployee(Employee employee) {
+		employeeDAO.updateEmployee(employee);
+	}
+
 	// This setter will be used by Spring context to inject the dao's instance
 	public void setEmployeeDAO(EmployeeDAO employeeDAO) {
 		this.employeeDAO = employeeDAO;

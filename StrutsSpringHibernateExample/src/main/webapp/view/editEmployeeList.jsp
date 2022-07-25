@@ -25,6 +25,9 @@ table.list, table.list td, table.list th {
 	<s:form method="post" action="add">
 		<table>
 			<tr>
+				<td><s:hidden name="employee.id"/></td>
+			</tr>
+			<tr>
 				<td><s:textfield key="label.firstname"
 						name="employee.firstname" /></td>
 			</tr>
@@ -44,7 +47,6 @@ table.list, table.list td, table.list th {
 		</table>
 	</s:form>
 
-
 	<h3>Employees</h3>
 	<c:if test="${!empty employees}">
 		<table class="list">
@@ -59,7 +61,10 @@ table.list, table.list td, table.list th {
 					<td>${emp.lastname},${emp.firstname}</td>
 					<td>${emp.email}</td>
 					<td>${emp.telephone}</td>
-					<td><a href="delete/${emp.id}">delete</a></td>
+					<td><a href="delete/${emp.id}">delete</a>
+						<a href="edit/${emp.id}">edit</a>
+					</td>
+					
 				</tr>
 			</c:forEach>
 		</table>

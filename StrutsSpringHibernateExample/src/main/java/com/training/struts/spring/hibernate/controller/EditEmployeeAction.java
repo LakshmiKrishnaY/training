@@ -46,6 +46,23 @@ public class EditEmployeeAction extends ActionSupport implements Preparable {
 		return SUCCESS;
 	}
 
+	// edits employee details by it's id
+	public String editEmployee() {
+		logger.info("edits employee details");
+		employee = employeeManager.editEmployee(employee.getId());
+		logger.debug(employee);
+		return SUCCESS;
+
+	}
+
+	// updates employee details by it's id
+	public String updateEmployee() {
+		logger.info("updates employee details");
+		employeeManager.updateEmployee(employee);
+		return SUCCESS;
+
+	}
+
 	// This method will be called before any of Action method is invoked;
 	// So some pre-processing if required.
 	@Override

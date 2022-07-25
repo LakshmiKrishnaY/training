@@ -8,10 +8,12 @@ CREATE TABLE EMPLOYEE
     CREATED     TIMESTAMP DEFAULT NOW()
 );
 
-CREATE TABLE `portal`.`address` (
-  `id` INT NOT NULL,
-  `street` VARCHAR(45) NULL,
-  `city` VARCHAR(45) NULL,
-  `state` VARCHAR(45) NULL,
-  `zipcode` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`));
+CREATE TABLE `address` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `street` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `state` varchar(45) DEFAULT NULL,
+  `zipcode` varchar(45) DEFAULT NULL,
+  `emp_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
